@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Canvas Drawing</h2>
+    <canvas id="myCanvas" width="500" height="400"></canvas>
+    <br>
+    <button onclick="clearCanvas()">Clear Canvas</button>
+    
+    <script>
+        // Get the canvas and context
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // Draw Blue Rectangle
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 150, 100);
+
+        // Draw Red Circle
+        ctx.fillStyle = "red";
+        ctx.beginPath();
+        ctx.arc(300, 100, 50, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw Green Triangle
+        ctx.fillStyle = "green";
+        ctx.beginPath();
+        ctx.moveTo(200, 250);
+        ctx.lineTo(150, 350);
+        ctx.lineTo(250, 350);
+        ctx.closePath();
+        ctx.fill();
+
+        // Draw Yellow Line
+        ctx.strokeStyle = "yellow";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(canvas.width, canvas.height);
+        ctx.stroke();
+
+        // Function to clear the canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script>
+    
+    <script>
+        console.log("Anthony Sagastume");
+    </script>
+</body>
+</html>
